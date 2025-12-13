@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do Zaječích</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rosario:wght@300;700&display=swap">
+    <link rel="stylesheet" href="https://use.typekit.net/zce4rzq.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        purple: '#B2ACE4',
+                        beige: '#E9DCC7',
+                        orange: '#E35424',
+                        olive: '#4C4E28',
+                        black: '#010101'
+                    },
+                    fontFamily: {
+                        'rosario': ['Rosario', 'sans-serif'],
+                        'belda': ['belda-normal', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .font-belda {
+            font-family: "belda-normal", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .h1 {
+            font-size: 96px;
+            line-height: 112px;
+        }
+
+        .h2 {
+            font-size: 56px;
+            line-height: 72px;
+        }
+
+        .h3 {
+            font-size: 22px;
+            line-height: 26px;
+        }
+
+        .h4 {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        .text-body {
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        .text2 {
+            font-size: 26px;
+            line-height: 30px;
+        }
+
+        .btn-spacing {
+            letter-spacing: 1px;
+        }
+
+        .btn-spacing:hover {
+            letter-spacing: 0.5px;
+        }
+
+        /* Navigační odkazy - bílé podtržení */
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #E9DCC7;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white !important;
+        }
+
+        .nav-link:hover::after {
+            background-color: #E35424;
+        }
+
+        /* Rezervace tlačítko - bílé s oranžovým textem */
+        .btn-rezervace {
+            background-color: #E9DCC7;
+        }
+
+        .btn-rezervace:hover {
+            background-color: #E35424;
+            color: #E9DCC7;
+        }
+
+        @media (max-width: 768px) {
+            .h1 {
+                font-size: 48px;
+                line-height: 56px;
+            }
+
+            .h2 {
+                font-size: 36px;
+                line-height: 44px;
+            }
+        }
+
+        .hero-hill {
+            clip-path: ellipse(70% 100% at 0% 100%);
+        }
+    </style>
+</head>
+
+<body class="font-rosario font-light text-body text-black bg-purple" style="min-height: 100vh;">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6 px-8 md:px-16">
+        <div class="flex justify-center items-center max-w-screen-2xl mx-auto gap-16">
+            <a href="#home" class="flex items-center">
+                <svg width="150" height="40" viewBox="0 0 150 40" class="fill-black">
+                    <text x="0" y="30" class="font-belda" style="font-size: 24px;">Do Zaječích</text>
+                </svg>
+            </a>
+            <nav class="flex gap-8 md:gap-11 items-center">
+                <a href="#o-posedu" class="nav-link font-bold text-black hidden md:inline">O posedu</a>
+                <a href="#galerie" class="nav-link font-bold text-black hidden md:inline">Galerie</a>
+                <a href="#kontakt" class="nav-link font-bold text-black hidden md:inline">Kontakt</a>
+                <a href="#rezervace"
+                    class="btn-rezervace btn-spacing font-belda text-lg px-8 py-2 rounded-full hover:scale-105 transition-all duration-300">REZERVACE</a>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <!-- Hero Section -->
+    <section id="home"
+        class="min-h-screen flex items-center justify-center bg-purple relative overflow-hidden pt-32 pb-16 px-8">
+
+        <!-- Content -->
+        <div class="max-w-4xl text-center relative z-10">
+            <h1 class="h1 font-belda text-black mb-8">Kdys naposled<br>vzal do zaječích?</h1>
+            <p class="text-lg mb-10 text-black">
+                Útulný a zařízený posed nad vršky<br>
+                Zlatých hor, <span class="font-bold">čeká jen na tebe.</span>
+            </p>
+            <a href="#rezervace"
+                class="btn-spacing font-belda text-lg px-10 py-4 bg-orange text-beige rounded-full inline-block hover:scale-105 transition-all duration-300">REZERVOVAT</a>
+        </div>
+    </section>
+
+    <!-- O posedu Section -->
+    <section id="o-posedu" class="bg-olive text-beige py-24 px-8 md:px-16">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="h2 font-belda mb-8">O posedu</h2>
+            <div class="mb-16 max-w-3xl">
+                <p class="mb-6">Toužíš uniknout na chvíli z města,<br>ale nechceš nic táhnout s sebou?</p>
+                <p class="text-sm opacity-90">Náš posed je vybavený vším, co budeš potřebovat<br>pro dokonalý relax v
+                    přírodě:</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+                <div class="text-left">
+                    <div class="w-20 h-20 bg-orange rounded-full mr-auto mb-6 flex items-center justify-center">
+                    </div>
+                    <div>
+                        <h3 class="h3 font-bold mb-4">Koupelnička</h3>
+
+                        <p class="text-sm leading-relaxed opacity-90">Plně vybavená,</p>
+                        <p class="text-sm leading-relaxed opacity-90">s čerstvě vypranými</p>
+                        <p class="text-sm leading-relaxed opacity-90">ručníky, voňavým</p>
+                        <p class="text-sm leading-relaxed opacity-90">sprchovým gelem</p>
+                        <p class="text-sm leading-relaxed opacity-90">i chemickým WC.</p>
+                    </div>
+                </div>
+
+                <div class="text-left">
+                    <div class="w-20 h-20 bg-orange rounded-full mr-auto mb-6 flex items-center justify-center">
+                    </div>
+                    <h3 class="h3 font-bold mb-4">Kuchyňka</h3>
+
+                    <p class="text-sm leading-relaxed opacity-90">Kávovar, konvice, lednice</p>
+                    <p class="text-sm leading-relaxed opacity-90">a dokonce i malý vařič</p>
+                    <p class="text-sm leading-relaxed opacity-90">a místo, kde si můžeš</p>
+                    <p class="text-sm leading-relaxed opacity-90">připravit jednodušší hostinu.</p>
+                    <p class="text-sm leading-relaxed opacity-90">hostinu.</p>
+                </div>
+
+                <div class="text-left">
+
+                    <div class="w-20 h-20 bg-orange rounded-full mr-auto mb-6 flex items-center justify-center">
+                    </div>
+                    <h3 class="h3 font-bold mb-4">Teplo a světlo</h3>
+
+                    <p class="text-sm leading-relaxed opacity-90">V zimních měsících si</p>
+                    <p class="text-sm leading-relaxed opacity-90">můžeš přitopit</p>
+                    <p class="text-sm leading-relaxed opacity-90">kamínkama na dřevo.</p>
+                    <p class="text-sm leading-relaxed opacity-90">Posed je připojen do sítě</p>
+                    <p class="text-sm leading-relaxed opacity-90">a máme i zásuvky.</p>
+                </div>
+
+                <div class="text-left">
+                    <div class="w-20 h-20 bg-orange rounded-full mr-auto mb-6 flex items-center justify-center">
+                    </div>
+
+                    <h3 class="h3 font-bold mb-4">Jídlo a pití</h3>
+
+                    <p class="text-sm leading-relaxed opacity-90">Můžeš si také</p>
+                    <p class="text-sm leading-relaxed opacity-90">přiobjednat snídaně od</p>
+                    <p class="text-sm leading-relaxed opacity-90">lokálních farmářů, které</p>
+                    <p class="text-sm leading-relaxed opacity-90">budou připravené každý</p>
+                    <p class="text-sm leading-relaxed opacity-90">den čerstvé.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="bg-black py-20 flex items-center justify-center">
+        <div
+            class="w-32 h-32 bg-beige rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300">
+            <div
+                class="w-0 h-0 border-l-[30px] border-l-orange border-t-[20px] border-t-transparent border-b-[20px] border-b-transparent ml-2">
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galerie" class="bg-beige">
+        <div class="grid grid-cols-6 auto-rows-[200px]">
+            <div class="col-span-2 row-span-2 bg-purple hover:scale-105 transition-transform duration-300"
+                style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800'); background-size: cover; background-position: center;">
+            </div>
+            <div class="col-span-4 row-span-2 bg-purple hover:scale-105 transition-transform duration-300"
+                style="background-image: url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200'); background-size: cover; background-position: center;">
+            </div>
+            <div class="col-span-2 row-span-2 bg-purple hover:scale-105 transition-transform duration-300"
+                style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800'); background-size: cover; background-position: center;">
+            </div>
+            <div class="col-span-2 row-span-2 bg-purple hover:scale-105 transition-transform duration-300"
+                style="background-image: url('https://images.unsplash.com/photo-1600566753151-384129cf4e3e?w=800'); background-size: cover; background-position: center;">
+            </div>
+            <div class="col-span-2 row-span-2 bg-purple hover:scale-105 transition-transform duration-300"
+                style="background-image: url('https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800'); background-size: cover; background-position: center;">
+            </div>
+            <div class="col-span-2 row-span-2 bg-purple hover:scale-105 transition-transform duration-300"
+                style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800'); background-size: cover; background-position: center;">
+            </div>
+            <div class="col-span-2 row-span-2 bg-purple hover:scale-105 transition-transform duration-300"
+                style="background-image: url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800'); background-size: cover; background-position: center;">
+            </div>
+            <div class="col-span-2 row-span-2 bg-purple hover:scale-105 transition-transform duration-300"
+                style="background-image: url('https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=800'); background-size: cover; background-position: center;">
+            </div>
+            <div class="col-span-3 row-span-1 bg-purple hover:scale-105 transition-transform duration-300"
+                style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600'); background-size: cover; background-position: center;">
+            </div>
+            <div class="col-span-3 row-span-1 bg-purple hover:scale-105 transition-transform duration-300"
+                style="background-image: url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600'); background-size: cover; background-position: center;">
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Darkovy poukaz Section -->
+    <section class="bg-orange py-20 px-8 md:px-16">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1 max-w-lg">
+                <h2 class="h2 font-belda text-black mb-6">Dárkový poukaz</h2>
+                <p class="text-black mb-8 font-bold">Unikátní zážitky, jako dárek běhen<br>vteřiny?</p>
+                <a href="#kontakt" class="btn-spacing font-belda text-lg px-10 py-4 bg-beige text-black rounded-full inline-block
+          hover:scale-105 hover:!text-[#f36422] transition-all duration-300">
+                    TO CHCI
+                </a>
+
+            </div>
+            <div class="flex-1 max-w-lg bg-purple p-16 rounded-2xl text-center relative overflow-hidden">
+                <!-- Decorative leaves -->
+                <div class="absolute top-4 left-4 w-12 opacity-60">
+                    <svg viewBox="0 0 100 100" class="fill-black">
+                        <ellipse cx="50" cy="50" rx="20" ry="35" />
+                    </svg>
+                </div>
+                <div class="absolute bottom-4 right-4 w-16 opacity-60">
+                    <svg viewBox="0 0 100 100" class="fill-black">
+                        <circle cx="30" cy="30" r="15" />
+                        <circle cx="60" cy="50" r="18" />
+                        <circle cx="40" cy="70" r="12" />
+                    </svg>
+                </div>
+                <p class="font-belda text-3xl md:text-4xl leading-tight text-black relative z-10">Kdys naposled<br>vzal
+                    do zaječích?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt Section -->
+    <section id="kontakt" class="bg-olive text-beige py-20 px-8 md:px-16">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="h2 font-belda mb-6">Kontakt</h2>
+                <p class="mb-12 opacity-90">Jsme Adam a Eva a můžete nám příjít.</p>
+                <p class="text-sm leading-relaxed opacity-75 mb-12">Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Nulla commodo duis dolor ipsum cursus at amet. Nunc sed integer risus diam class lacus, auctor
+                    eget. Massa vel integer cursus dignissim lectus et elit at. Aliquam ut pharetra ultrices etiam sit
+                    adipisci.</p>
+            </div>
+            <div class="space-y-8 mt-40">
+                <div class="flex items-center gap-6">
+                    <div class="w-16 h-16 bg-orange rounded-full flex items-center justify-center flex-shrink-0">
+                    </div>
+                    <div>
+                        <h4 class="h4 font-bold mb-2">EMAIL</h4>
+                        <p class="text-lg">utec@dozajecich.cz</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="w-16 h-16 bg-orange rounded-full flex items-center justify-center flex-shrink-0">
+                    </div>
+                    <div>
+                        <h4 class="h4 font-bold mb-2">TELEFON</h4>
+                        <p class="text-lg">+420 000 000 000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full m-0 p-0">
+        <iframe src="https://www.google.com/maps/embed?pb=...tvojeMapa..." class="w-full h-80 border-0 block"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
+
+<footer class="bg-black text-white py-8 px-6">
+        <div class="max-w-5xl mx-auto flex items-start justify-center gap-20">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <svg class="w-12 h-12 text-white" viewBox="0 0 50 50" fill="currentColor">
+                    <path d="M25 5 L20 15 L15 10 L10 20 L5 15 L10 30 Q15 40 25 40 Q35 40 40 30 L45 15 L40 20 L35 10 L30 15 Z"/>
+                    <circle cx="20" cy="22" r="2"/>
+                    <circle cx="30" cy="22" r="2"/>
+                    <path d="M18 28 Q25 32 32 28" stroke="currentColor" fill="none" stroke-width="2"/>
+                </svg>
+                <div>
+                    <div class="text-xl font-bold leading-tight">Do</div>
+                    <div class="text-xl font-bold leading-tight">Zajíčích</div>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div class="flex flex-col gap-1">
+                <h3 class="text-xs uppercase tracking-wider mb-1">Odkazy</h3>
+                <a href="#" class="text-sm hover:underline">Podmínky ochrany osobních údajů</a>
+                <a href="#" class="text-sm hover:underline">Sušenky</a>
+            </div>
+
+            <!-- Social -->
+            <div class="flex flex-col gap-2">
+                <h3 class="text-xs uppercase tracking-wider">Sociální sítě</h3>
+                <div class="flex gap-3">
+                    <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition" style="background-color: #E35424;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="black" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center hover:scale-110 transition" style="background-color: #E35424;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="black" viewBox="0 0 24 24">
+                            <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > 50) {
+                header.classList.add('bg-purple');
+                header.classList.add('py-5');
+                header.classList.remove('py-6');
+            } else {
+                header.classList.remove('bg-purple');
+                header.classList.remove('py-5');
+                header.classList.add('py-6');
+            }
+        });
+    </script>
+</body>
+
+</html>
